@@ -1,6 +1,6 @@
 {
   "name": "node-any-jdbc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node Module any DB JDBC wrapper",
   "author": "Amiya Pattanaik <pattnaik_amiya@yahoo.com>",
   "main": "index.js",
