@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://"
+    "url": "git://github.com/amiya-pattnaik/node-any-jdbc.git"
   },
   "dependencies": {
     "any-db": "^2.2.0",
@@ -25,6 +25,12 @@
     "async": "*",
     "mocha": "^4.0.1"
   },
+  "keywords": [
+    "node",
+    "jdbc",
+    "any-db",
+    "wrapper"
+  ],
   "license": "MIT",
   "readmeFilename": "README.md"
 }
