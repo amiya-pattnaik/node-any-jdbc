@@ -1,0 +1,30 @@
+{
+  "name": "node-any-jdbc",
+  "version": "1.0.0",
+  "description": "Node Module any DB JDBC wrapper",
+  "author": "Amiya Pattanaik <pattnaik_amiya@yahoo.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "engines": {
+  "node": ">=6.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://"
+  },
+  "dependencies": {
+    "any-db": "^2.2.0",
+    "any-db-jdbc": "^1.0.0",
+    "assert": "^1.4.1",
+    "should": "^13.1.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "async": "*",
+    "mocha": "^4.0.1"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

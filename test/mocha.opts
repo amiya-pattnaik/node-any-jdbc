@@ -1,0 +1,5 @@
+--require should
+--ui bdd
+--recursive ./test/specs/**/*.js
+--timeout 20000
+--colors
