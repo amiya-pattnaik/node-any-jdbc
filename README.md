@@ -36,6 +36,8 @@ Windows users, if the Microsoft's windows-build-tools are installed properly the
 ## Example
 
 ```
+var db        = require('node-any-jdbc');
+
 var cogfig = {
   libpath: './config/drivers/mysql/mysql-connector-java-5.0.8-bin.jar',
   drivername: 'com.mysql.jdbc.Driver',
@@ -47,6 +49,7 @@ var cogfig = {
 var sql = 'SELECT * FROM emp_info where emp_id = "1001"';
 
 db.execute(cogfig, sql, function(results){
+
   console.log(results);
 
 });
