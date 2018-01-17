@@ -1,6 +1,6 @@
 ## node-any-jdbc
 
-This module connects to any database and executes any sql statement on target database
+This module connects to any RDBMS such as Oracle, Vertica, Teradata, MySql etc.  and executes any sql statement on target database. You just need the the Xjdbc.jar of your target RDBMS to bridge the connection. One common method `execute` for all purpose.
 
 ## Installation
 
@@ -36,8 +36,19 @@ Windows users, if the Microsoft's windows-build-tools are installed properly the
 ## Example
 
 ```
-var db        = require('node-any-jdbc');
+var db = require('node-any-jdbc');
 
+//example of Oracle connection string
+oracleCogfig = {
+  libpath: './config/drivers/oracle/ojdbc7.jar',
+  drivername: 'oracle.jdbc.driver.OracleDriver',
+  url:  'jdbc:oracle:thin:QA/password123@//abc-test.corp.int:1527/stage1',
+  // uri: 'jdbc:oracle:thin://abc-test.corp.int:1527/stage1',
+  // user: 'QA',
+  // password: 'password123',
+};
+
+//example of mysql connection string
 var cogfig = {
   libpath: './config/drivers/mysql/mysql-connector-java-5.0.8-bin.jar',
   drivername: 'com.mysql.jdbc.Driver',
@@ -46,15 +57,31 @@ var cogfig = {
   password: 'root123'
 };
 
+//example of sample select query to fetch the result set
+
 var sql = 'SELECT * FROM emp_info where emp_id = "1001"';
-
 db.execute(cogfig, sql, function(results){
-
   console.log(results);
+});
+
+//example of create TABLE
+
+db.execute(cogfig, 'CREATE TABLE test(ID INTEGER, TEXT VARCHAR(255)), function(err){
+  console.log(err);
+  assert.equal(err, null);
 
 });
 
-Note: It automatically ends the connection after the db.execute()
+//example of INSERT TABLE
+
+var sql = 'INSERT INTO emp_info (emp_id, emp_name, emp_dept, location) VALUES (1009, "Chandra", "IT", "CA")';
+db.execute(cogfig, sql, function(){
+  db.execute(cogfig, 'SELECT * FROM emp_info where emp_id = 1009', function(results){
+    console.log(results);
+  });
+});
+
+For more info on how to use xjdbc.jar, db connection string and example etc. please refer to the sample example under /config and /test/specs/ on github.com/amiya-pattnaik/node-any-jdbc
 
 ```
 
