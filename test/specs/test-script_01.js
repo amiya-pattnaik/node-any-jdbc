@@ -4,9 +4,9 @@ var dbc       = require('../../config/db');
 var db        = require('../../index');
 
 
-describe('Sample ETL Testing Demo Script_01 --- ', function () {
+describe('sample databse testing script', function () {
 
-  it("executes a SQL select query on mysql database, testcase - 1", function (done){
+  it("should executes a SQL select query on mysql database and fetch the result set", function (done){
     var sql = 'SELECT * FROM emp_info where emp_name = "Amiya"';
     db.execute(dbc.mysql, sql, function(results){
       console.log(results);
@@ -14,4 +14,16 @@ describe('Sample ETL Testing Demo Script_01 --- ', function () {
       done();
     });
   });
+
+  it("should insert a SQL select statement on mysql database and fetch the result set", function (done){
+    var sql = 'INSERT INTO emp_info (emp_id, emp_name, emp_dept, location) VALUES (1009, "Chandra", "IT", "CA")';
+
+    db.execute(dbc.mysql, sql, function(){
+      db.execute(dbc.mysql, 'SELECT * FROM emp_info where emp_id = 1009', function(results){
+        console.log(results);
+      });
+      done();
+    });
+  });
+
 });
