@@ -1,6 +1,6 @@
 {
   "name": "node-any-jdbc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node Module any DataBase JDBC wrapper",
   "author": "Amiya Pattanaik <pattnaik_amiya@yahoo.com>",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test": "./node_modules/.bin/mocha"
   },
   "engines": {
-  "node": ">=6.10.0"
+    "node": ">=6.10.0"
   },
   "repository": {
     "type": "git",
