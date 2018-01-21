@@ -1,6 +1,6 @@
 ## node-any-jdbc
 
-This module connects to any RDBMS such as Oracle, Vertica, Teradata, MySql etc.  and executes any sql statement on target database. You just need the the Xjdbc.jar of your target RDBMS to bridge the connection. One common method `execute` for all purpose.
+This module connects to any RDBMS such as Oracle, Vertica, Teradata, MySql etc.  and executes any type of SQL statement on target database. You just need the the Xjdbc.jar of your target RDBMS to bridge the connection. One common method `execute()` for all purpose. That's all there is to it.!
 
 ## Installation
 
@@ -8,7 +8,7 @@ JDK: Install JDK 1.8. All the tests work out of the box on a 1.8+ JVM. JDK is re
 
 Xcode: MAC users, ensure you have Xcode installed. This is required for compiling native addon modules for Node.js.
 
-Windows Build Tool: (follow below step if your target OS is Windows)
+Windows Build Tool: (follow below steps if your OS is Windows)
 
 ```
 Although it is not necessary, but before you install the windows specific build tools, make sure you uninstall other `microsoft visual c++ 2005 redistributable` software from the machine. You can install it afterwards if require a specific version for other purpose.
@@ -93,7 +93,7 @@ db.execute(cogfig, sql, function(){
 });
 
 ```
-Note: You don't require to close the connection explicitly. It is being hndled by the `execute()` method.
+Note: You don't require to close the connection explicitly. It is being handled by the `execute()` method.
 
 For more info on how to use xjdbc.jar, db connection string and example etc. please refer to the sample example under /config and /test/specs
 
