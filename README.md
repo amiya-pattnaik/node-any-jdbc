@@ -8,7 +8,8 @@ JDK: Install JDK 1.8. All the tests work out of the box on a 1.8+ JVM. JDK is re
 
 Xcode: MAC users, ensure you have Xcode installed. This is required for compiling native addon modules for Node.js.
 
-#### Windows Build tool. (follow below step if your target OS is Windows)
+Windows Build Tool: (follow below step if your target OS is Windows)
+
 ```
 Although it is not necessary, but before you install the windows specific build tools, make sure you uninstall other `microsoft visual c++ 2005 redistributable` software from the machine. You can install it afterwards if require a specific version for other purpose.
 
@@ -36,9 +37,18 @@ Windows users, if the Microsoft's windows-build-tools are installed properly the
 ## Example
 
 ```
+execute(config, sqlQuery, callback);
+
+execute a SQL query on any RDBMS and gives query results set
+@param {*} config - db connection strings
+@param {*} sqlQuery - sql queries to execute
+@param {callback} callback function that contains query results and gets called when the command finishes
+
+
 var db = require('node-any-jdbc');
 
 //example of Oracle connection string
+
 oracleCogfig = {
   libpath: './config/drivers/oracle/ojdbc7.jar',
   drivername: 'oracle.jdbc.driver.OracleDriver',
@@ -49,6 +59,7 @@ oracleCogfig = {
 };
 
 //example of mysql connection string
+
 var cogfig = {
   libpath: './config/drivers/mysql/mysql-connector-java-5.0.8-bin.jar',
   drivername: 'com.mysql.jdbc.Driver',
@@ -81,9 +92,10 @@ db.execute(cogfig, sql, function(){
   });
 });
 
-For more info on how to use xjdbc.jar, db connection string and example etc. please refer to the sample example under /config and /test/specs/ on github.com/amiya-pattnaik/node-any-jdbc
-
 ```
+Note: You don't require to close the connection explicitly. It is being hndled by the `execute()` method.
+
+For more info on how to use xjdbc.jar, db connection string and example etc. please refer to the sample example under /config and /test/specs
 
 ## Contribution
 
