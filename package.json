@@ -1,7 +1,7 @@
 {
   "name": "node-any-jdbc",
   "version": "1.0.4",
-  "description": "Node Module any DataBase JDBC wrapper",
+  "description": "JDBC wrapper for any DataBase",
   "author": "Amiya Pattanaik <pattnaik_amiya@yahoo.com>",
   "main": "index.js",
   "scripts": {
@@ -26,11 +26,12 @@
     "mocha": "^4.0.1"
   },
   "keywords": [
-    "node",
     "jdbc",
+    "db",
     "any-db",
     "database",
-    "wrapper"
+    "wrapper",
+    "node"
   ],
   "license": "MIT",
   "readmeFilename": "README.md"
